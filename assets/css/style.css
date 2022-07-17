@@ -3,7 +3,8 @@
     --white: white;
     --black: black;
     --background-grey: #eeeeee;
-    --featured-project-max-height: 540px ;
+    --featured-project-max-height: 540px;
+    --project-card-max-height: 400px;
 
 }
 
@@ -11,6 +12,7 @@ html {
     background-color: var(--background-grey);
     font-size: 10px;
     font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -20,18 +22,25 @@ body {
 header {
     background-color: var(--background-blue);
     color: var(--white);
-    height: 100px;
+    min-height: 100px;
     text-align: center;
     line-height: 1.0;
 }
 
-header nav a {
+#headerLinks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.headerLink {
     text-decoration: none;
     color: var(--white);
-    margin: 5px;
-    padding: 5px;
+    /* margin: 5px;
+    padding: 5px; */
     font-size: 2rem;
-
+    width: 25%;
+    border: 1px solid red;
 }
 
 h1 {
@@ -50,7 +59,7 @@ h2 {
 #aboutMe {
     display: flex;
     flex-direction: row;
-    margin: 5px;
+    margin: 2.5%;
 
 }
 
@@ -75,21 +84,24 @@ p {
     flex-direction: column;
     margin: 2.5%;
     width: 95%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    /* padding: 2.5% ; */
+
 }
 
 #featuredCard {
     max-height: var(--featured-project-max-height);
     position: relative;
     display: inline-block;
-    width: 100% ;
+    width: 100%;
 }
 
 /*  */
 #featuredCard img {
     width: 100%;
     object-fit: cover;
-    max-height: var(--featured-project-max-height) ;
+    max-height: var(--featured-project-max-height);
+    min-height: 50px;
 }
 
 /* Caption box that is on the bottom left of the featured project image */
@@ -99,12 +111,13 @@ p {
     background-color: var(--background-blue);
     padding: 5px;
     width: 20%;
-    position: absolute ;
-    bottom: 0px ;
-    left: 0px ;
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
     text-align: center;
     font-weight: bolder;
-    border: 2px solid ;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
     border-color: var(--background-grey);
 }
 
@@ -115,31 +128,101 @@ p {
     flex-direction: row;
     margin-top: 10px;
     width: 100%;
+    /* border: 1px solid red ; */
+    /* padding: 0% 2.5% 0% 2.5% ; */
+    justify-content: center;
 }
 
-#projectCards .projectCard {
-    display: block;
-    width: 50%;
+.projectCard {
+    width: 30%;
+    margin: 3px;
+    max-height: var(--project-card-max-height);
+    position: relative;
+    display: inline-block;
 }
 
-/* #projectCards .projectCard p {
-    position: relative ;
-    left: 0 ;
-    bottom: 0 ;
-} */
+.projectCard img {
+    width: 100%;
+    object-fit: cover;
+    max-height: var(--project-card-max-height);
+    min-height: 50px
+}
+
+.projectCaption {
+    font-size: 1.5rem;
+    color: var(--white);
+    background-color: var(--background-blue);
+    padding: 5px;
+    width: 35%;
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    text-align: center;
+    font-weight: bolder;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: var(--background-grey);
+}
+
+#contact {
+    background-color: var(--background-blue);
+    color: var(--white);
+    height: 100px;
+    text-align: center;
+    line-height: 1.0;
+    padding-top: 40px;
+
+}
+
+#contact nav {
+    display: flex;
+    justify-content: center;
+}
+
+footer nav a {
+    text-decoration: none;
+    color: var(--white);
+    margin: 5px;
+    padding: 5px;
+    font-size: 2rem;
+}
+
+
 
 /* Media query for 992px or less screens */
 
 @media screen and (max-width: 992px) {
-    article {
-        width: 50%;
+    .projectCard {
+        width: 45%;
     }
 }
 
 /* Media query for 768px or less screens */
 
 @media screen and (max-width: 768px) {
-    article {
-        width: 100%;
+    .projectCard {
+        width: 90%;
+    }
+
+    .headerLink {
+        width: 50%;
+    }
+
+    #aboutMe {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #aboutMeText h2 {
+
+        text-align: center;
+    }
+
+    #aboutMePic img {
+
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
     }
 }
