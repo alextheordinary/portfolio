@@ -3,24 +3,59 @@
     --white: white ;
     --black: black ;
     --background-grey: #eeeeee ;
+
+}
+
+html {
     background-color: var(--background-grey);
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    line-height: 1.5;
 }
 
 header {
     background-color: var(--background-blue);
     color: var(--white);
-    font-family: Arial, Helvetica, sans-serif;
     height: 100px ;
     text-align: center ;
+    line-height: 1.0;
 }
 
 header nav a {
     text-decoration: none;
     color: var(--white);
     margin: 5px ;
+    padding: 5px ;
+    font-size: 2rem ;
+
 }
 
+h1 {
+    font-size: 4rem ;
+    margin-bottom: 10px ;
+    padding-top: 10px ;
+}
 
+h2 {
+    font-size: 1.8rem ;
+}
+
+#aboutMeText p {
+    font-size: 1.4rem;
+}
+
+#aboutMe {
+    display: flex;
+    flex-direction: row;
+    margin: 10px ;
+}
+
+#aboutMeText {
+    margin: 10px ;
+}
 
 #aboutMePic img {
 
