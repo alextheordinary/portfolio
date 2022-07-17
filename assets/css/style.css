@@ -1,8 +1,9 @@
 :root {
     --background-blue: #4285f4;
-    --white: white ;
-    --black: black ;
-    --background-grey: #eeeeee ;
+    --white: white;
+    --black: black;
+    --background-grey: #eeeeee;
+    --featured-project-max-height: 540px ;
 
 }
 
@@ -19,56 +20,119 @@ body {
 header {
     background-color: var(--background-blue);
     color: var(--white);
-    height: 100px ;
-    text-align: center ;
+    height: 100px;
+    text-align: center;
     line-height: 1.0;
 }
 
 header nav a {
     text-decoration: none;
     color: var(--white);
-    margin: 5px ;
-    padding: 5px ;
-    font-size: 2rem ;
+    margin: 5px;
+    padding: 5px;
+    font-size: 2rem;
 
 }
 
 h1 {
-    font-size: 4rem ;
-    margin-bottom: 10px ;
-    padding-top: 10px ;
+    font-size: 4rem;
+    margin-bottom: 10px;
+    padding-top: 10px;
 }
 
 h2 {
-    font-size: 1.8rem ;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+/* Setting up default (desktop) behavior for About Me Section */
+
+#aboutMe {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+
 }
 
 #aboutMeText p {
     font-size: 1.4rem;
 }
 
-#aboutMe {
-    display: flex;
-    flex-direction: row;
-    margin: 10px ;
-}
-
-#aboutMeText {
-    margin: 10px ;
+#aboutMeText h2,
+p {
+    margin: 10px;
+    text-align: left;
 }
 
 #aboutMePic img {
-
     max-width: 200px;
-
 }
 
+/* Setting up default behavior for Projects section */
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    margin: 2.5%;
+    width: 95%;
+    border: 1px solid red;
+}
+
+#featuredCard {
+    max-height: var(--featured-project-max-height);
+    position: relative;
+    display: inline-block;
+    width: 100% ;
+}
+
+/*  */
+#featuredCard img {
+    width: 100%;
+    object-fit: cover;
+    max-height: var(--featured-project-max-height) ;
+}
+
+/* Caption box that is on the bottom left of the featured project image */
+.featuredCaption {
+    font-size: 1.6rem;
+    color: var(--white);
+    background-color: var(--background-blue);
+    padding: 5px;
+    width: 20%;
+    position: absolute ;
+    bottom: 0px ;
+    left: 0px ;
+    text-align: center;
+    font-weight: bolder;
+    border: 2px solid ;
+    border-color: var(--background-grey);
+}
+
+/*  */
+#projectCards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 10px;
+    width: 100%;
+}
+
+#projectCards .projectCard {
+    display: block;
+    width: 50%;
+}
+
+/* #projectCards .projectCard p {
+    position: relative ;
+    left: 0 ;
+    bottom: 0 ;
+} */
 
 /* Media query for 992px or less screens */
 
 @media screen and (max-width: 992px) {
     article {
-        width: 50% ;
+        width: 50%;
     }
 }
 
@@ -76,6 +140,6 @@ h2 {
 
 @media screen and (max-width: 768px) {
     article {
-        width: 100% ;
+        width: 100%;
     }
 }
