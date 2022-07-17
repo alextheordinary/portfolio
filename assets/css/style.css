@@ -27,18 +27,20 @@ header {
     text-align: center;
 }
 
+/* Setting up a flex container for the header links */
 #headerLinks {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
+/* By default, header links are 4 links per row */
 .headerLink {
     text-decoration: none;
     color: var(--white);
     font-size: 2rem;
     width: 25%;
-    padding: 2px ;
+    padding: 2px;
 }
 
 h1 {
@@ -87,14 +89,17 @@ p {
 
 }
 
+/* Container for the featured project */
 #featuredCard {
     max-height: var(--featured-project-max-height);
     position: relative;
     display: inline-block;
     width: 100%;
+
+
 }
 
-/*  */
+/* Featured project card has a max height and the image will fit to cover the area by cropping where necessary. Min height is in case image link breaks */
 #featuredCard img {
     width: 100%;
     object-fit: cover;
@@ -119,18 +124,17 @@ p {
     border-color: var(--background-grey);
 }
 
-/*  */
+/* Setting up flex container for project cards */
 #projectCards {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     margin-top: 10px;
     width: 100%;
-    /* border: 1px solid red ; */
-    /* padding: 0% 2.5% 0% 2.5% ; */
     justify-content: center;
 }
 
+/* By default, 3 cards per row */
 .projectCard {
     width: 30%;
     margin: 3px;
@@ -139,6 +143,7 @@ p {
     display: inline-block;
 }
 
+/* Project card has a max height and the image will fit to cover the area by cropping where necessary. Min height is in case image link breaks */
 .projectCard img {
     width: 100%;
     object-fit: cover;
@@ -146,6 +151,7 @@ p {
     min-height: 50px
 }
 
+/* Caption box that is on the bottom right of the project image */
 .projectCaption {
     font-size: 1.5rem;
     color: var(--white);
@@ -162,44 +168,49 @@ p {
     border-color: var(--background-grey);
 }
 
+/* Setting up a 100px height footer area */
 footer {
     background-color: var(--background-blue);
     color: var(--white);
     min-height: 100px;
     text-align: center;
-    padding-top: 40px ;
+    padding-top: 40px;
 }
 
+/* Setting up flex container for contact links */
 #contactLinks {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
+/* By default, contact links are 4 per row */
 .contactLink {
     text-decoration: none;
     color: var(--white);
     font-size: 2rem;
     width: 25%;
-    padding: 2px ;
+    padding: 2px;
 }
 
 
-/* Media query for 992px or less screens */
+/* Media query for 992px or less screens. Makes project cards 2 per row and contact links 2 per row. */
 
 @media screen and (max-width: 992px) {
     .projectCard {
         width: 45%;
     }
+
     .contactLink {
         width: 50%;
     }
+
     footer {
-        padding-top: 20px ;
+        padding-top: 20px;
     }
 }
 
-/* Media query for 768px or less screens */
+/* Media query for 768px or less screens. Makes project cards 1 per row, header links 2 per row, contact links 1 per row, and changes the config of the about me section to flex by column */
 
 @media screen and (max-width: 768px) {
     .projectCard {
@@ -209,11 +220,13 @@ footer {
     .headerLink {
         width: 50%;
     }
+
     .contactLink {
         width: 100%;
     }
+
     footer {
-        padding-top: 0px ;
+        padding-top: 0px;
     }
 
     #aboutMe {
